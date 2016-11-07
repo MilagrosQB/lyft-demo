@@ -6,7 +6,7 @@ body{
 }
 
 .loading{
-	background: url(../images/lyft_logo_white.png) center no-repeat #fff radial-gradient(circle, rgba(248, 26, 255, 0.9), rgba(75, 11, 80, 0.9));
+	background: #fff radial-gradient(circle, rgba(248, 26, 255, 0.9), rgba(75, 11, 80, 0.9));
 	position: fixed;
 	left: 0px;
 	top: 0px;
@@ -21,3 +21,10 @@ body{
     text-align:center;
 }
 */
+
+#s-register{
+	background: url(../images/drive-intro.jpg);
+	background-size: cover;
+	background-position: center;
+	font-size: 4em;
+}
