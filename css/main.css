@@ -18,6 +18,7 @@ body{
 .loading img {
     margin: 65% 34%;
     width: 35%;
+
 }
 
 /*.logo-inicio{
@@ -31,5 +32,17 @@ body{
 	background: url(../images/drive-intro.jpg);
 	background-size: cover;
 	background-position: center;
+	height: 700px;
 	font-size: 4em;
+}
+
+#s-register img{
+    margin: 2% 35%;
+    width: 32%;
+}
+
+.options-register{
+    font-size: 0.5em;
+    padding-top: 122%;
+    padding-left: 13%;
 }
