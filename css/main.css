@@ -15,6 +15,11 @@ body{
 	z-index: 9999;
 }
 
+.loading img {
+    margin: 65% 34%;
+    width: 35%;
+}
+
 /*.logo-inicio{
     line-height:400px;
     margin:0px auto;
