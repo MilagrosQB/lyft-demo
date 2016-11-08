@@ -46,3 +46,15 @@ body{
     padding-top: 122%;
     padding-left: 13%;
 }
+
+.options-register .btn-login{
+	background: transparent;
+	border: 2px solid #FFFFFF;
+	color: #FFFFFF;
+
+
+}
+
+.optiones-register .btn-signup{
+	background: radial-gradient(circle, rgba(248, 26, 255, 0.9), rgba(75, 11, 80, 0.9));
+}
