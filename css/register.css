@@ -31,3 +31,11 @@ body{
 #b-peru{
   width: 20%;
 }
+
+#i-number{
+  width: 100%;
+}
+
+.title-country{
+  font-weight: bold;
+}
