@@ -6,7 +6,6 @@ body{
   height: 100vh;  
   background-color: #FFFFFF;
   position: relative;
-
 }
 
 #s-sign-up {
@@ -53,4 +52,13 @@ body{
   color: #FFFFFF;
   width: 100vw;
   bottom: 0%;
+}
+
+.inline-block{
+  display: inline-block;
+  clear:both;
+}
+
+input.number-box{
+  width: 20%;
 }
