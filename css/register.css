@@ -5,3 +5,29 @@ body{
   background-color: #FFFFFF;
 
 }
+
+#s-sign-up {
+  position: relative;
+
+}
+
+#s-sign-up .row .col-xs-1 .fa-angle-left{
+  position: absolute;
+  margin: 60% 35%;
+  font-weight: bold;
+  font-size: 1.4em;
+}
+
+#s-sign-up .row{
+  border-bottom: 1px solid #e1dfe1;
+}
+
+.title-signup{
+  padding-top: 2%;
+  font-weight: bold;
+  font-size: 1.1em;
+}
+
+#b-peru{
+  width: 20%;
+}
