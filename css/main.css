@@ -2,6 +2,9 @@ body{
 	box-sizing: border-box;
 	margin:0px;
 	padding:0px;
+	width: 100%;
+	height: 100vh;
+	position: relative;
 
 }
 
@@ -37,16 +40,17 @@ body{
 
 .options-register{
     font-size: 0.7em;
-    padding-top: 122%;
-    padding-left: 13%;
+    position: absolute;
+	text-align: center;
+	width: 100%;
+    bottom: 4%;
+/*     padding-top: 122%;
+padding-left: 13%; */
 }
 
 .options-register a{
 	background: transparent;
 	color: #FFFFFF;
-    margin-top: 45%;
-    margin-left: -2%;
-    margin-right: 6%;
     padding: 2% 14%;
 }
 
