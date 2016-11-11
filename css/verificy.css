@@ -62,3 +62,7 @@ body{
 input.number-box{
   width: 20%;
 }
+
+.pad-10{
+  padding-top: 10%;
+}

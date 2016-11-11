@@ -4,9 +4,9 @@
 	<meta charset="UTF-8">
 	<title>Lyft</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" type="text/css" href="fonts/css/font-awesome.css">	
+	<link rel="stylesheet" type="text/css" href="fonts/css/font-awesome.css">
 	<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
-	<link rel="stylesheet" href="css/register.css">
+	<link rel="stylesheet" href="css/sign-up.css">
 	<link rel="shortcut icon" href="favicon.ico">
 </head>
 <body>
@@ -14,25 +14,53 @@
 		<div class="container">
 			<div class="row text-center">
 				<div class="col-xs-1 text-center">
-					<a href="index.html"><i class="fa fa-angle-left" aria-hidden="true"></i></a>
+					<a href="verificy.html"><i class="fa fa-angle-left" aria-hidden="true"></i></a>
 				</div>
 				<div class="col-xs-11 text-center">
 					<p class="title-signup">Sign up</p>
 					<h5>Join now for free ride credit</h5>
 				</div>
 			</div>
-			<div class="row text-center">
-				<form id="register-form">
-					<input type="name">
-					<input type="address">
-					<input type="email">
-				</form>				
-			</div>
-		</div>		
+		
+		<form id="registrationForm" class="form-horizontal">
+		    <div class="form-group">
+		        <div class="col-xs-6">
+		            <input type="text" class="form-control" name="firstName" placeholder="First name" />
+		        </div>
+		        <div class="col-xs-6">
+		            <input type="text" class="form-control" name="lastName" placeholder="Last name" />
+		        </div>
+		    </div>
+
+		    <div class="form-group">
+		        <div class="col-xs-12">
+		            <input type="text" class="form-control" name="email" placeholder="Email" />
+		        </div>
+		    </div>
+
+		    <div class="form-group">
+		        <div class="col-xs-10 col-xs-offset-2">
+		            <div class="checkbox">
+		                <label>
+		                    <input type="checkbox" name="agree" value="agree" /> I agree to Lyft's <a href="#terms" class="terms-conditions">Terms of Service</a>
+		                </label>
+		            </div>
+		        </div>
+		    </div>
+
+<!-- 		    <div class="form-group">
+    <div class="col-xs-9 col-xs-offset-3">
+        <button type="submit" class="btn btn-primary" name="signup" value="Sign up">Submit</button>
+    </div>
+</div> -->
+		</form>		
+
+
+		</div>			
 	</section>
 	<section id="s-next">
 			<div class="btn-btn">
-				<a href="verificy.html" id="next" class="btn btn-next">Next</a>
+				<a href="#" id="next" name="signup" class="btn btn-next">Next</a>
 			</div>				
 	</section>
 
