@@ -54,3 +54,8 @@ body{
   width: 100vw;
   bottom: 0%;
 }
+
+.btn-next:hover{
+  color: #FFFFFF;
+  background-color: #e500b2;
+}

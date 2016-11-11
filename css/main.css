@@ -53,8 +53,7 @@ body{
 }
 
 .options-register a:hover{
-    background: linear-gradient(to right, #2f073b , #741866);
-	
+    background: linear-gradient(to right, #2f073b , #741866);	
 }
 
 .options-register .btn-login{

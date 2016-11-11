@@ -54,6 +54,11 @@ body{
   bottom: 0%;
 }
 
+.btn-next:hover{
+  color: #FFFFFF;
+  background-color: #e500b2;
+}
+
 .inline-block{
   display: inline-block;
   clear:both;
