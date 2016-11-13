@@ -5,9 +5,6 @@ $(window).load(function() {
 $(document).ready(function () {
     $('#register-form').submit(function() {
     $('#next').attr('disabled');
-    var movilNumber = localStorage.getItem("numberSaved");
-	$("#numberPrint").text(movilNumber);
-
 });
 
     $('#register-form').validate({
@@ -40,6 +37,7 @@ $(document).ready(function () {
     	}
     });
 
-
+    	var movilNumber = localStorage.getItem("numberSaved");
+		$("#numberPrint").text(movilNumber);
 
 });
