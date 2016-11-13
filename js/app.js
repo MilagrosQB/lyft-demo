@@ -31,8 +31,14 @@ $(document).ready(function () {
         if ($("#register-form").valid()) {
             var numberRandom = Math.floor( Math.random() * 1000 )+8000;
     		alert("Your code Lyft is " + numberRandom );
+    		var phoneNumber =  $("#i-number").val();
+			localStorage.setItem("numberSaved", phoneNumber);
+	
     		window.location.href = "verificy.html"
     	}
     });
+
+    	var movilNumber = localStorage.getItem("numberSaved");
+		$("#number-print").text(movilNumber);
 
 });
