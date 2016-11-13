@@ -5,6 +5,9 @@ $(window).load(function() {
 $(document).ready(function () {
     $('#register-form').submit(function() {
     $('#next').attr('disabled');
+    var movilNumber = localStorage.getItem("numberSaved");
+	$("#numberPrint").text(movilNumber);
+
 });
 
     $('#register-form').validate({
@@ -32,13 +35,11 @@ $(document).ready(function () {
             var numberRandom = Math.floor( Math.random() * 1000 )+8000;
     		alert("Your code Lyft is " + numberRandom );
     		var phoneNumber =  $("#i-number").val();
-			localStorage.setItem("numberSaved", phoneNumber);
-	
+			localStorage.setItem("numberSaved", phoneNumber);	
     		window.location.href = "verificy.html"
     	}
     });
 
-    	var movilNumber = localStorage.getItem("numberSaved");
-		$("#number-print").text(movilNumber);
+
 
 });
