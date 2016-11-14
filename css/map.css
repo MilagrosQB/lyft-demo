@@ -10,6 +10,43 @@ html, body {
 
 #search-direction {
 	position: absolute;
-	width: 100%;
+	width: 90%;
 	bottom: 3.5em;	
+}
+
+#input-direction{
+    width: 85%;
+    position: absolute;
+    left: 15%;
+    bottom: 102%;
+}
+
+.circle-lyft{
+    position: absolute;
+    bottom: 85%;
+    width: 45px;
+    height: 45px;
+	border-radius: 50%;
+    background-color: #FFFFFF;
+    border: 1px solid #412c90; 
+}
+
+.icon-search{
+	width: 84%;
+    position: absolute;
+    top: 30%;
+    left: 8%;
+    vertical-align: middle;
+}
+
+.btn-lyft{
+	background-color: #412c90;
+	color: #FFFFFF;
+	font-size: 1.2em;	
+	font-weight: bold;
+	margin-top: 3%;
+}
+
+.display-none{ 
+	display: none;
 }

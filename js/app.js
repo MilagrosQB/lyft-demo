@@ -132,5 +132,14 @@ $(document).ready(function () {
   			$("#numberPrint").text(movilNumber);
   	var nameUser = localStorage.getItem("nameSaved");
   	var adressUser = localStorage.getItem("adressSaved");
-  	var mailUser = localStorage.getItem("mailSaved");  	
+  	var mailUser = localStorage.getItem("mailSaved"); 
+
+
+
+    function showLateral(){
+        $("#panelUser").remove("display-none").toggle("slow");
+     }
+    function hideLateral(){
+        $("#panelUser").addClass("display-none").toggle("slow");
+    }	
 });
