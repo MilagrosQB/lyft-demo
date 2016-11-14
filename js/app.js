@@ -31,12 +31,12 @@ $(document).ready(function () {
 
     $('#next').click(function () {
         if ($('#register-form').valid()) {
-            var numberRandom = Math.floor( Math.random() * 1000 )+8000;
-    		alert("Your code Lyft is " + numberRandom );
-    		var phoneNumber =  $('#i-number').val();
-			localStorage.setItem("numberSaved", phoneNumber);
-			localStorage.setItem("codeRandom", numberRandom);
-    		window.location.href = "verificy.html"
+        	var numberRandom = Math.floor( Math.random() * 500 )+8000;
+        	alert("Your code Lyft is " + numberRandom );
+        	var phoneNumber =  $('#i-number').val();
+        	localStorage.setItem("numberSaved", phoneNumber);
+        	localStorage.setItem("codeRandom", numberRandom);
+        	window.location.href = "verificy.html"
     	}
     });
 
@@ -44,17 +44,17 @@ $(document).ready(function () {
 
     $('#next-verificy').click(function() {
     	var firstCode = $('.number-box').eq(0).val();
-		var secondCode = $('.number-box').eq(1).val();
-		var thirdCode = $('.number-box').eq(2).val();
-		var fourthCode= $('.number-box').eq(3).val();		
-		var codeFinal = firstCode + secondCode + thirdCode + fourthCode;
-		if (codeFinal === localStorage.getItem("codeRandom")) {
-			window.location.href = "sign-up.html"
-		} else { 
-			alert("Code incorrect. Press Resend Code")
-			$(".number-box").val("");
-		}
-	})
+    	var secondCode = $('.number-box').eq(1).val();
+    	var thirdCode = $('.number-box').eq(2).val();
+    	var fourthCode= $('.number-box').eq(3).val();		
+    	var codeFinal = firstCode + secondCode + thirdCode + fourthCode;
+    	if (codeFinal === localStorage.getItem("codeRandom")) {
+    		window.location.href = "sign-up.html"
+    	} else { 
+    		alert("Code incorrect. Press Resend Code")
+    		$(".number-box").val("");
+    	}
+    })
 
     $('#resendCode').click(function() {
     	var numberRandom = Math.floor( Math.random() * 1000 )+8000;
@@ -97,8 +97,7 @@ $(document).ready(function () {
     			required: "Last Name is a required field ",
     			number: "Enter letters , no numbers",
     			minlength: "Your last name must have more than 3 letters",
-				maxlength: "Your last name must haven't more than 18 letters"			
-
+				maxlength: "Your last name must haven't more than 18 letters"	
     		},
     		email: {
     			required: "Email is a required field ",
@@ -122,24 +121,23 @@ $(document).ready(function () {
 			localStorage.setItem("nameSaved", name);
 			localStorage.setItem("adressSaved", adress);
 			localStorage.setItem("mailSaved", mailito);  
-    		window.location.href = "map.html"
+    	window.location.href = "map.html"
     	}
     });
 
-
-
   	var movilNumber = localStorage.getItem("numberSaved");
   			$("#numberPrint").text(movilNumber);
-  	var nameUser = localStorage.getItem("nameSaved");
+
+  			$("#namePrint").text(localStorage.getItem("nameSaved"));
   	var adressUser = localStorage.getItem("adressSaved");
   	var mailUser = localStorage.getItem("mailSaved"); 
+  			$("#mailPrint").text(mailUser);
 
-
-
-    function showLateral(){
-        $("#panelUser").remove("display-none").toggle("slow");
-     }
-    function hideLateral(){
-        $("#panelUser").addClass("display-none").toggle("slow");
-    }	
 });
+
+  $('.button-collapse').sideNav({
+      menuWidth: 300, // Default is 240
+      edge: 'left', // Choose the horizontal origin
+      closeOnClick: true, // Closes side-nav on <a> clicks, useful for Angular/Meteor
+      draggable: true // Choose whether you can drag to open on touch screens
+    })

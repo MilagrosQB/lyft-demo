@@ -1,4 +1,5 @@
 html, body {
+	font-family: sans-serif;	
 	height: 100%;
 	margin: 0;
 	padding: 0;
@@ -47,6 +48,29 @@ html, body {
 	margin-top: 3%;
 }
 
+#s-profile{
+    background-color: #412c90;	
+}
+
+.logo-mapa {
+	width: 10%;
+	margin: 0% 44%;	
+}
+
 .display-none{ 
 	display: none;
 }
+
+.profile {
+  margin: 20px 0;
+}
+
+
+    header, main, footer {
+      padding-left: 300px;
+    }
+
+    @media only screen and (max-width : 992px) {
+      header, main, footer {
+        padding-left: 0;
+      }
