@@ -122,8 +122,7 @@ $(document).ready(function () {
 			localStorage.setItem("nameSaved", name);
 			localStorage.setItem("adressSaved", adress);
 			localStorage.setItem("mailSaved", mailito);  
-    		
-    		alert("Estas a un paso del mapa :D");
+    		window.location.href = "map.html"
     	}
     });
 
