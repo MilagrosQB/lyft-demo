@@ -31,3 +31,6 @@ function handleLocationError(browserHasGeolocation, infoWindow, pos) {
         'Error: The Geolocation service failed.' :
 		'Error: Your browser doesn\'t support geolocation.');
 }
+
+
+

@@ -16,15 +16,16 @@ html, body {
 }
 
 #input-direction{
-    width: 85%;
+    width: 83%;
     position: absolute;
-    left: 15%;
+    left: 14%;
     bottom: 102%;
 }
 
 .circle-lyft{
     position: absolute;
     bottom: 85%;
+    left: -3%;
     width: 45px;
     height: 45px;
 	border-radius: 50%;
@@ -33,19 +34,21 @@ html, body {
 }
 
 .icon-search{
-	width: 84%;
+    width: 91%;
     position: absolute;
-    top: 30%;
-    left: 8%;
+    top: 31%;
+    left: 4%;
     vertical-align: middle;
 }
 
 .btn-lyft{
-	background-color: #412c90;
-	color: #FFFFFF;
-	font-size: 1.2em;	
-	font-weight: bold;
-	margin-top: 3%;
+    background-color: #412c90;
+    color: #FFFFFF;
+    font-size: 1em;
+    font-weight: bold;
+    margin-left: -6%;
+    margin-top: 4%;
+    width: 103%;
 }
 
 #s-profile{
@@ -57,14 +60,28 @@ html, body {
 	margin: 0% 44%;	
 }
 
-.display-none{ 
-	display: none;
+.side-nav{
+	width: 220px;
 }
 
-.profile {
-  margin: 20px 0;
+img.circle {
+    margin: 0% 30%;
 }
 
+.session-drive{
+	position: absolute;
+	bottom: 10%;
+	width: 100%;
+    background-color: #412c90;	
+}
+
+a.waves-effect.session-drive{
+	color: white;
+}
+
+.fa{
+	font-size: 2em;
+}
 
     header, main, footer {
       padding-left: 300px;

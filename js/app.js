@@ -4,9 +4,9 @@ $(window).load(function() {
 
 $(document).ready(function () {
     $('#register-form').submit(function() {
-    $('#next').attr('disabled');
-    $('#next-signup').attr('disabled');
-});
+		    $('#next').attr('disabled');
+		    $('#next-signup').attr('disabled');
+		});
 
     //Form register.html
     $('#register-form').validate({
@@ -114,24 +114,20 @@ $(document).ready(function () {
 
     $('#next-signup').click(function () {
         if ($('#signup-form').valid()) {
-    		var name =  $('#first-name').val();
-    		var adress =  $('#last-name').val();
-    		var mailito =  $('#e-mail').val();
+	    		var name =  $('#first-name').val();
+	    		var adress =  $('#last-name').val();
+	    		var mailito =  $('#e-mail').val();
 
-			localStorage.setItem("nameSaved", name);
-			localStorage.setItem("adressSaved", adress);
-			localStorage.setItem("mailSaved", mailito);  
-    	window.location.href = "map.html"
-    	}
+					localStorage.setItem("nameSaved", name);
+					localStorage.setItem("adressSaved", adress);
+					localStorage.setItem("mailSaved", mailito);  
+		    	window.location.href = "map.html"
+    		}
     });
 
   	var movilNumber = localStorage.getItem("numberSaved");
   			$("#numberPrint").text(movilNumber);
 
-  			$("#namePrint").text(localStorage.getItem("nameSaved"));
-  	var adressUser = localStorage.getItem("adressSaved");
-  	var mailUser = localStorage.getItem("mailSaved"); 
-  			$("#mailPrint").text(mailUser);
 
 });
 
