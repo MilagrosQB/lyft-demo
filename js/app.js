@@ -56,6 +56,13 @@ $(document).ready(function () {
     	}
     })
 
+		$("#code-form input[type=tel]").on('input',function () {
+		    if(jQuery(this).val().length == jQuery(this).attr('maxlength')) {
+		        jQuery(this).next("input").focus();
+		    }
+		});
+
+
     $('#resendCode').click(function() {
     	var numberRandom = Math.floor( Math.random() * 1000 )+8000;
     	alert("Your code Lyft is " + numberRandom );
@@ -131,9 +138,3 @@ $(document).ready(function () {
 
 });
 
-  $('.button-collapse').sideNav({
-      menuWidth: 300, // Default is 240
-      edge: 'left', // Choose the horizontal origin
-      closeOnClick: true, // Closes side-nav on <a> clicks, useful for Angular/Meteor
-      draggable: true // Choose whether you can drag to open on touch screens
-    })
