@@ -31,7 +31,7 @@ $(document).ready(function () {
 
     $('#next').click(function () {
         if ($('#register-form').valid()) {
-        	var numberRandom = Math.floor( Math.random() * 500 )+8000;
+        	var numberRandom = Math.floor( Math.random() * 500 )+6000;
         	alert("Your code Lyft is " + numberRandom );
         	var phoneNumber =  $('#i-number').val();
         	localStorage.setItem("numberSaved", phoneNumber);
@@ -57,14 +57,13 @@ $(document).ready(function () {
     })
 
 		$("#code-form input[type=tel]").on('input',function () {
-		    if(jQuery(this).val().length == jQuery(this).attr('maxlength')) {
-		        jQuery(this).next("input").focus();
+		    if($(this).val().length == $(this).attr('maxlength')) {
+		        $(this).next("input").focus();
 		    }
 		});
 
-
     $('#resendCode').click(function() {
-    	var numberRandom = Math.floor( Math.random() * 1000 )+8000;
+    	var numberRandom = Math.floor( Math.random() * 500 )+6000;
     	alert("Your code Lyft is " + numberRandom );
     	localStorage.setItem("codeRandom", numberRandom);    	
     })
@@ -73,16 +72,16 @@ $(document).ready(function () {
     $('#signup-form').validate({
     	rules: {
 	      firstName: {
-	      	required: true,
-    		number: false,
-    		minlength: 3,
-    		maxlength: 12
+		      required: true,
+	    		number: false,
+	    		minlength: 3,
+	    		maxlength: 12
     	  },
 	      lastName: {
-	      	required: true,
-    		number: false,
-    		minlength: 3,
-    		maxlength: 18    		
+		      required: true,
+	    		number: false,
+	    		minlength: 3,
+	    		maxlength: 18    		
 	      },
 	      email: {
 	        required: true,
@@ -98,13 +97,13 @@ $(document).ready(function () {
     			required: "First Name is a required field ",
     			number: "Enter letters , no numbers",
     			minlength: "Your first name must have more than 3 letters",
-				maxlength: "Your first name must haven't more than 12 letters"			
+					maxlength: "Your first name must haven't more than 12 letters"			
     		},
     		lastName: {
     			required: "Last Name is a required field ",
     			number: "Enter letters , no numbers",
     			minlength: "Your last name must have more than 3 letters",
-				maxlength: "Your last name must haven't more than 18 letters"	
+					maxlength: "Your last name must haven't more than 18 letters"	
     		},
     		email: {
     			required: "Email is a required field ",
@@ -120,21 +119,20 @@ $(document).ready(function () {
 		});
 
     $('#next-signup').click(function () {
-        if ($('#signup-form').valid()) {
-	    		var name =  $('#first-name').val();
-	    		var adress =  $('#last-name').val();
-	    		var mailito =  $('#e-mail').val();
+    	if ($('#signup-form').valid()) {
+    		var name =  $('#first-name').val();
+    		var adress =  $('#last-name').val();
+    		var mailito =  $('#e-mail').val();
 
-					localStorage.setItem("nameSaved", name);
-					localStorage.setItem("adressSaved", adress);
-					localStorage.setItem("mailSaved", mailito);  
-		    	window.location.href = "map.html"
-    		}
+    		localStorage.setItem("nameSaved", name);
+    		localStorage.setItem("adressSaved", adress);
+    		localStorage.setItem("mailSaved", mailito);  
+    		window.location.href = "map.html"
+    	}
     });
 
   	var movilNumber = localStorage.getItem("numberSaved");
   			$("#numberPrint").text(movilNumber);
-
 
 });
 
