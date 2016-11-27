@@ -1,7 +1,3 @@
-$(window).load(function() {
-	$('.loading').fadeOut('slow');
-});
-
 $(document).ready(function () {
     $('#register-form').submit(function() {
 		    $('#next').attr('disabled');
@@ -132,7 +128,7 @@ $(document).ready(function () {
     });
 
   	var movilNumber = localStorage.getItem("numberSaved");
-  			$("#numberPrint").text(movilNumber);
+  	$("#numberPrint").text(movilNumber);
 
 });
 

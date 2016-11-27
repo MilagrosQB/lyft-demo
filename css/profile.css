@@ -9,3 +9,47 @@ body{
       header, main, footer {
         padding-left: 0;
       }
+
+
+
+#profile-panel{
+	position: relative;
+}
+
+.img-profile{
+    width: 100vw;
+    height: 50vh;	
+}
+
+#profile-panel .fa-angle-left{
+	font-size: 5em;
+	position: absolute;
+    top: 7%;
+    left: 3%;
+    color: #810ea5;
+
+}
+
+#namePrint{
+	font-size: 4.1em;
+	text-align: center;
+	margin: 0px 39%;	
+}
+
+#datePrint{
+	height: 72px;
+    background-color: #e6e6e6;
+}
+
+.monthPrint{
+	text-align: center;
+	text-transform: uppercase;
+    font-size: 2.3em;
+    margin: 2% 28%;
+    padding: 2%;
+}
+
+.edditable{
+	font-size: 3.2em;
+	margin: 0% 5%;
+}
