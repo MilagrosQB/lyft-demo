@@ -30,6 +30,17 @@ html, body {
     bottom: 102%;
 }
 
+#address-now{
+    position: absolute;
+    left: -6%;
+    bottom: -78%;
+    background: #DBDBDB;
+    width: 103%;
+    padding: 0.5rem 1.5rem;
+    border: 1px solid;
+    font-weight: bold;    
+}
+
 .circle-lyft{
     position: absolute;
     bottom: 72%;

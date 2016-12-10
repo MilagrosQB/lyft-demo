@@ -1,120 +1,76 @@
-function initMap() {
-  var map = new google.maps.Map(document.getElementById('map'), {
-    center: {lat: -34.397, lng: 150.644},
-    zoom: 16
-  });
-  var infoWindow = new google.maps.InfoWindow({map: map});
-
-    var geocoder = new google.maps.Geocoder();
-
-  document.getElementById('pickup').addEventListener('click', function() {
-    geocodeAddress(geocoder, map);
-  });
-
-  // Try HTML5 geolocation.
+var loadMap = function() {
   if (navigator.geolocation) {
-    navigator.geolocation.getCurrentPosition(function(position) {
-      var pos = {
-        lat: position.coords.latitude,
-        lng: position.coords.longitude
-      };
-
-      infoWindow.setPosition(pos);
-      infoWindow.setContent('You are here.');
-      map.setCenter(pos);
-    }, function() {
-      handleLocationError(true, infoWindow, map.getCenter());
-    });
-  } else {
-    // Browser doesn't support Geolocation
-    handleLocationError(false, infoWindow, map.getCenter());
+      navigator.geolocation.getCurrentPosition(functionSuccess, functionError);
   }
-  }
+  $("#pickup").click(search);
+};
 
-function geocodeAddress(geocoder, resultsMap) {
-  var address = document.getElementById('address').value;
-  geocoder.geocode({'address': address}, function(results, status) {
-    if (status === google.maps.GeocoderStatus.OK) {
-      resultsMap.setCenter(results[0].geometry.location);
-      var marker = new google.maps.Marker({
-        map: resultsMap,
-        position: results[0].geometry.location
-      });
-
-    } else {
-      alert('Geocode was not successful for the following reason: ' + status);
-    }
+var map,lat,lon;
+var functionSuccess = function(position) {
+  lat = position.coords.latitude;
+  lon = position.coords.longitude;
+  map = new GMaps({
+    div: "#map",
+    lat: lat,
+    lng: lon,
+    zoom: 16,
+    mapTypeControl:false,
+    zoomControl: false,
+    streetViewControl:false
   });
-    };
+  var geocoder = new google.maps.Geocoder;
 
-function handleLocationError(browserHasGeolocation, infoWindow, pos) {
-  infoWindow.setPosition(pos);
-  infoWindow.setContent(browserHasGeolocation ?
-        'Error: The Geolocation service failed.' :
-    'Error: Your browser doesn\'t support geolocation.');
-}   
-
-function initAutocomplete() {
-  var map = new google.maps.Map(document.getElementById('map'), {
-    center: {lat: -33.8688, lng: 151.2195},
-    zoom: 13,
-    mapTypeId: google.maps.MapTypeId.ROADMAP
+  map.addMarker({
+    lat: lat,
+    lng: lon,
   });
-
-  // Create the search box and link it to the UI element.
-  var input = document.getElementById('input-direction');
-  var searchBox = new google.maps.places.SearchBox(input);
-  map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
-
-  // Bias the SearchBox results towards current map's viewport.
-  map.addListener('bounds_changed', function() {
-    searchBox.setBounds(map.getBounds());
-  });
-
-  var markers = [];
-  // [START region_getplaces]
-  // Listen for the event fired when the user selects a prediction and retrieve
-  // more details for that place.
-  searchBox.addListener('places_changed', function() {
-    var places = searchBox.getPlaces();
-
-    if (places.length == 0) {
-      return;
-    }
-
-    // Clear out the old markers.
-    markers.forEach(function(marker) {
-      marker.setMap(null);
-    });
-    markers = [];
-
-    // For each place, get the icon, name and location.
-    var bounds = new google.maps.LatLngBounds();
-    places.forEach(function(place) {
-      var icon = {
-        url: place.icon,
-        size: new google.maps.Size(71, 71),
-        origin: new google.maps.Point(0, 0),
-        anchor: new google.maps.Point(17, 34),
-        scaledSize: new google.maps.Size(25, 25)
-      };
-
-      // Create a marker for each place.
-      markers.push(new google.maps.Marker({
-        map: map,
-        icon: icon,
-        title: place.name,
-        position: place.geometry.location
-      }));
-
-      if (place.geometry.viewport) {
-        // Only geocodes have viewport.
-        bounds.union(place.geometry.viewport);
-      } else {
-        bounds.extend(place.geometry.location);
+  var pos = "";
+  var latlng = new google.maps.LatLng(lat, lon);
+  geocoder = new google.maps.Geocoder();
+  geocoder.geocode({"latLng": latlng}, function(results, status){
+    if (status == google.maps.GeocoderStatus.OK){
+      if (results[0]){
+        pos = results[0].formatted_address;
       }
-    });
-    map.fitBounds(bounds);
+      else{
+        pos = "No results found.";
+      }
+    }
+    else{
+      pos = "Geocoder failed due to:" + status;
+    }
+    window.localStorage.setItem("address-now",pos)
+    $("#address-now").text(window.localStorage.getItem("address-now"));
   });
-  // [END region_getplaces]
+
 }
+var functionError = function (error) {
+  alert("Error: The Geolocation service failed.");
+}
+var search= function(e){
+  e.preventDefault();
+  GMaps.geocode({
+    address: $('#address').val(),
+    callback: function(results, status) {
+      if (status == 'OK') {
+        var latlng = results[0].geometry.location;
+        map.zoomOut(2);
+        map.setCenter(lat,latlng.lng());
+        map.addMarker({
+          lat: latlng.lat(),
+          lng: latlng.lng()
+        });
+        map.drawRoute({
+          origin: [lat,lon],
+          destination: [latlng.lat(), latlng.lng()],
+          travelMode: 'driving',
+          strokeColor: '#412c90',
+          strokeOpacity: 0.8,
+          strokeWeight: 5
+        });
+      }
+    }
+  });
+  $('#pickup').val("");
+}
+$(document).ready(loadMap);
