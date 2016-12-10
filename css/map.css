@@ -9,6 +9,14 @@ html, body {
 	height: 100%;
 }
 
+#address {
+    display: block;
+    width: 87%;
+    position: absolute;
+    bottom: 84%;
+    left: 10%;
+}  
+
 #search-direction {
 	position: absolute;
 	width: 90%;
@@ -24,8 +32,8 @@ html, body {
 
 .circle-lyft{
     position: absolute;
-    bottom: 85%;
-    left: -3%;
+    bottom: 72%;
+    left: -6%;
     width: 45px;
     height: 45px;
 	border-radius: 50%;
